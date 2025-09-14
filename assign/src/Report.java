@@ -18,12 +18,29 @@ public class Report {
     }
 
     // Getters
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public String getContent() { return content; }
-    public String getFooter() { return footer; }
-    public boolean hasTable() { return hasTable; }
-    public boolean hasChart() { return hasChart; }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getFooter() {
+        return footer;
+    }
+
+    public boolean hasTable() {
+        return hasTable;
+    }
+
+    public boolean hasChart() {
+        return hasChart;
+    }
 
     @Override
     public String toString() {

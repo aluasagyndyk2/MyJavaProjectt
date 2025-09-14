@@ -9,15 +9,12 @@ public class Main {
                 .includeChart(true)
                 .build();
 
-        Report summaryReport = new Report.Builder()
-                .setTitle("Weekly Summary")
-                .setAuthor("Team Lead")
-                .setContent("This is a weekly summary of project progress.")
-                .includeTable(false)
-                .includeChart(false)
-                .build();
-
-        System.out.println(salesReport);
-        System.out.println(summaryReport);
+        // Getters қолдану → warning кетеді
+        System.out.println("Title: " + salesReport.getTitle());
+        System.out.println("Author: " + salesReport.getAuthor());
+        System.out.println("Content: " + salesReport.getContent());
+        System.out.println("Footer: " + salesReport.getFooter());
+        System.out.println("Table included: " + salesReport.hasTable());
+        System.out.println("Chart included: " + salesReport.hasChart());
     }
 }
