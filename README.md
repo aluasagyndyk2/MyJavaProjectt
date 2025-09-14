@@ -7,13 +7,6 @@ The project also follows Clean Code principles for better maintainability.
 
 ---
 
-## UML Diagram
-Below is the UML diagram that shows the structure of the Report class and its inner Builder class.
-
-![UML] patterns.drawio.svg)
-
----
-
 ## Clean Code Principles Applied
 - Meaningful names: Classes, methods, and variables are named clearly and consistently.  
 - Single Responsibility Principle (SRP): Report class only stores data, while Builder class is responsible for object creation.  
