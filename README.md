@@ -10,7 +10,7 @@ The project also follows Clean Code principles for better maintainability.
 ## UML Diagram
 Below is the UML diagram that shows the structure of the Report class and its inner Builder class.
 
-![UML Diagram](images/uml.png)
+![UML] patterns.drawio.svg)
 
 ---
 
