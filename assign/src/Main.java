@@ -1,13 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        Report report = new Report.ReportBuilder()
-                .setTitle("Annual Sales Report")
-                .setAuthor("Alua Sagyndyk")
-                .setPages(30)
-                .setHasGraphs(true)
-                .setHasSummary(true)
+        Report salesReport = new Report.Builder()
+                .setTitle("Monthly Sales Report")
+                .setAuthor("Alua Sag")
+                .setContent("This report contains monthly sales data...")
+                .setFooter("Confidential")
+                .includeTable(true)
+                .includeChart(true)
                 .build();
 
-        System.out.println(report);
+        Report summaryReport = new Report.Builder()
+                .setTitle("Weekly Summary")
+                .setAuthor("Team Lead")
+                .setContent("This is a weekly summary of project progress.")
+                .includeTable(false)
+                .includeChart(false)
+                .build();
+
+        System.out.println(salesReport);
+        System.out.println(summaryReport);
     }
 }

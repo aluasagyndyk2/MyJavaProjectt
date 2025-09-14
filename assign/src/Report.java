@@ -1,66 +1,83 @@
-// Product + Builder
+// Product class
 public class Report {
     private final String title;
     private final String author;
-    private final int pages;
-    private final boolean hasGraphs;
-    private final boolean hasSummary;
+    private final String content;
+    private final String footer;
+    private final boolean hasTable;
+    private final boolean hasChart;
 
-    // Приватный конструктор — создаем только через Builder
-    private Report(ReportBuilder builder) {
+    // Private constructor (тек Builder қолдансын)
+    private Report(Builder builder) {
         this.title = builder.title;
         this.author = builder.author;
-        this.pages = builder.pages;
-        this.hasGraphs = builder.hasGraphs;
-        this.hasSummary = builder.hasSummary;
+        this.content = builder.content;
+        this.footer = builder.footer;
+        this.hasTable = builder.hasTable;
+        this.hasChart = builder.hasChart;
     }
 
-    // -------- Вложенный класс Builder --------
-    public static class ReportBuilder {
+    // Getters
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public String getContent() { return content; }
+    public String getFooter() { return footer; }
+    public boolean hasTable() { return hasTable; }
+    public boolean hasChart() { return hasChart; }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", content='" + content + '\'' +
+                ", footer='" + footer + '\'' +
+                ", hasTable=" + hasTable +
+                ", hasChart=" + hasChart +
+                '}';
+    }
+
+    // Builder inner class
+    public static class Builder {
         private String title;
         private String author;
-        private int pages;
-        private boolean hasGraphs;
-        private boolean hasSummary;
+        private String content;
+        private String footer;
+        private boolean hasTable;
+        private boolean hasChart;
 
-        public ReportBuilder setTitle(String title) {
+        public Builder setTitle(String title) {
             this.title = title;
             return this;
         }
 
-        public ReportBuilder setAuthor(String author) {
+        public Builder setAuthor(String author) {
             this.author = author;
             return this;
         }
 
-        public ReportBuilder setPages(int pages) {
-            this.pages = pages;
+        public Builder setContent(String content) {
+            this.content = content;
             return this;
         }
 
-        public ReportBuilder setHasGraphs(boolean hasGraphs) {
-            this.hasGraphs = hasGraphs;
+        public Builder setFooter(String footer) {
+            this.footer = footer;
             return this;
         }
 
-        public ReportBuilder setHasSummary(boolean hasSummary) {
-            this.hasSummary = hasSummary;
+        public Builder includeTable(boolean hasTable) {
+            this.hasTable = hasTable;
+            return this;
+        }
+
+        public Builder includeChart(boolean hasChart) {
+            this.hasChart = hasChart;
             return this;
         }
 
         public Report build() {
             return new Report(this);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Report {" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", pages=" + pages +
-                ", hasGraphs=" + hasGraphs +
-                ", hasSummary=" + hasSummary +
-                '}';
     }
 }
