@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
         Report salesReport = new Report.Builder()
                 .setTitle("Monthly Sales Report")
-                .setAuthor("Alua Sag")
-                .setContent("This report contains monthly sales data...")
+                .setAuthor("Alua Sagyndyk")
+                .setContent("This report contains monthly sales data.")
                 .setFooter("Confidential")
                 .includeTable(true)
                 .includeChart(true)
