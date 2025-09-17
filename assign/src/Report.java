@@ -1,5 +1,6 @@
-// Product class
+// Our Product class – Report
 public class Report {
+    // Fields of the report
     private final String title;
     private final String author;
     private final String content;
@@ -7,7 +8,7 @@ public class Report {
     private final boolean hasTable;
     private final boolean hasChart;
 
-    // Private constructor (тек Builder қолдансын)
+    // Private constructor – can only be called from Builder
     private Report(Builder builder) {
         this.title = builder.title;
         this.author = builder.author;
@@ -17,31 +18,15 @@ public class Report {
         this.hasChart = builder.hasChart;
     }
 
-    // Getters
-    public String getTitle() {
-        return title;
-    }
+    // Getters – used to read values
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public String getContent() { return content; }
+    public String getFooter() { return footer; }
+    public boolean hasTable() { return hasTable; }
+    public boolean hasChart() { return hasChart; }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getFooter() {
-        return footer;
-    }
-
-    public boolean hasTable() {
-        return hasTable;
-    }
-
-    public boolean hasChart() {
-        return hasChart;
-    }
-
+    // toString – makes object readable when we print it
     @Override
     public String toString() {
         return "Report{" +
@@ -54,7 +39,7 @@ public class Report {
                 '}';
     }
 
-    // Builder inner class
+    // Builder class – step by step construction of Report
     public static class Builder {
         private String title;
         private String author;
@@ -63,9 +48,10 @@ public class Report {
         private boolean hasTable;
         private boolean hasChart;
 
+        // Each method sets one field and returns Builder again
         public Builder setTitle(String title) {
             this.title = title;
-            return this;
+            return this; // allows chain calls
         }
 
         public Builder setAuthor(String author) {
@@ -83,16 +69,19 @@ public class Report {
             return this;
         }
 
+        // Add or remove table
         public Builder includeTable(boolean hasTable) {
             this.hasTable = hasTable;
             return this;
         }
 
+        // Add or remove chart
         public Builder includeChart(boolean hasChart) {
             this.hasChart = hasChart;
             return this;
         }
 
+        // Final step – return the ready Report object
         public Report build() {
             return new Report(this);
         }

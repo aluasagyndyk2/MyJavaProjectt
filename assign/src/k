@@ -1,0 +1,20 @@
+@startuml
+class Student {
+  - name : String
+  - age : int
+  + study() : void
+}
+
+class Course {
+  - title : String
+  + addStudent(s : Student) : void
+}
+
+class Teacher {
+  - name : String
+  + teach(c : Course) : void
+}
+
+Student "0..*" -- "0..*" Course : enrolls
+Teacher "1" -- "0..*" Course : teaches
+@enduml
