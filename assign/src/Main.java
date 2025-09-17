@@ -9,7 +9,7 @@ public class Main {
                 .includeChart(true)
                 .build();
 
-        // Getters қолдану → warning кетеді
+        // Getters
         System.out.println("Title: " + salesReport.getTitle());
         System.out.println("Author: " + salesReport.getAuthor());
         System.out.println("Content: " + salesReport.getContent());
